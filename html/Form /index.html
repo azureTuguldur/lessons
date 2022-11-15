@@ -20,22 +20,22 @@
             <input id="lastname" placeholder="Lastname" name="ovog" type="text">
             
         </div>
-        <div>
+        <div class="full">
             <label for="e-mail"></label>
             <input id="e-mail" placeholder="E-Mail"  type="email">
 
         </div>
-        <div class="date">
+        <div class="date full">
             <label for="date"></label>
             <input placeholder="yyyy.mm.dd" type="date">
 
         </div>
-        <div>
+        <div class="full">
             <label for="company"></label>
             <input placeholder="Company" type="text">
 
         </div>
-        <div>
+        <div class="full">
             <label for="select"></label>
             <select name="select" id="select">
                 <option value="Position">Position</option>
@@ -49,28 +49,30 @@
     <div class="second">
     <h2>Contact Details</h2>
     <form action="Contact" class="input2" method="post">
-        <div>
+        <div class="full">
             <label for="street"></label>
             <input placeholder="Street" type="text">
 
         </div>
-        <div>
+        <div class="full">
             <label for="info"></label>
             <input placeholder="Additional information" type="text">
 
         </div>
-        <div>
-            <label for="zipcode"></label>
-            <input placeholder="Zipcode" type="text">
+        <div class="half">
+            <div class="half1">
+                <label for="zipcode"></label>
+                <input placeholder="Zipcode" type="text">
 
-            <label for="place"></label>
-            <select name="place" id="place">
+                <label class="half" for="place"></label></div>
+            <div class="half2">
+                <select name="place" id="place">
                 <option value="Place">Place</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
-            </select>
+            </select></div>
         </div>
-        <div>
+        <div class="full">
             <label for="country"></label>
             <select name="country" id="country">
                 <option value="Country">Country</option>

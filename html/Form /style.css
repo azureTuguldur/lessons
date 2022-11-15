@@ -8,28 +8,35 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-left: 10%;
+    padding-left: 20%;
     padding-right: 10%;
     padding-top: 5%;
     border-radius: 20px;
-    height: 700px;
+    height: 850px;
+    width: 60%;
 }
 .first{
     background-color: white;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
     width: 50%;
-    padding-left: 50px;
+    padding-left: 60px;
+    padding-top: 45px;
 }
 .second{
     background-color: rgba(58, 58, 186);
+    color: white;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
     width: 50%;
-    padding-left: 50px;
+    padding-left: 60px;
+    padding-top: 45px;
 }
 .second input{
     background-color: rgba(58, 58, 186);
+}
+.second select{
+    color: white;
 }
 .first select{
     background-color: white;
@@ -50,7 +57,7 @@ input{
     border-left: none;
     border-right: none;
     padding-top: 10px;
-    margin-top: 25px;
+    margin-top: 45px;
 }
 select{
     font-size: 24px;
@@ -59,7 +66,7 @@ select{
     border-left: none;
     border-right: none;
     padding-top: 10px;
-    margin-top: 25px;
+    margin-top: 45px;
 }
 .input1{
     display: flex;
@@ -71,4 +78,32 @@ select{
     flex-direction: column;
     flex-grow: 1;
 
+}
+a{
+    color: white;
+}
+.first h2{
+    color:rgb(50, 83, 152);
+}
+.second ::placeholder{
+    color: white;
+}
+select{
+    width: 82%;
+}
+.half{
+    display: flex;
+    width: 100%;
+}
+.half1{
+
+}
+.half2{
+    width: 47%;
+}
+.full{
+    width: 100%;
+}
+form{
+    width: 100%;
 }
