@@ -1,7 +1,7 @@
 .full{
     background-color: rgb(116, 250, 253);
-    width: 50%;
-    margin-left: 25%;
+    width: 25%;
+    margin: 0 auto;
     height: 600px;
 }
 .full div{

@@ -1,0 +1,72 @@
+body{
+    background-color: green;
+}
+h1{z
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mobile display */
+@media screen and (max-width: 480px) {
+    body{
+        background-color : red;
+    }
+    h1::after{
+        content: 'Mobile display';
+        font-size: 3rem;
+    }
+    
+}
+
+
+
+/* Ipad and Tablet */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    body{
+        background-color: brown;
+    }
+    h1::after{
+        content: 'Ipad and Tablet';
+        font-size: 4rem;
+    }
+    
+}
+
+
+/* Small screens, laptops */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    body{
+        background-color: aqua;
+    }
+    h1::after{
+        content: 'Small screens, laptops';
+        font-size: 5rem;
+    }
+    
+}
+
+
+/* Desktops, large screens */
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+    body{
+        background-color: blueviolet;
+    }
+    h1::after{
+        content: 'Desktops, large screens';
+        font-size: 6rem;
+    }
+}
+
+
+/* Extra large screens, TV */
+@media screen and (min-width: 1201px) {
+    body{
+        background-color: darkblue;
+    }
+    h1::after{
+        content: 'Extra large screens, TV';
+        font-size: 7rem;
+    }
+    
+}

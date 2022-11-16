@@ -31,6 +31,7 @@ h1{
     z-index: 900;
     transition-property: top,left,border-radius,background-color;
     transition-duration: 1s,2s,3s,3s; 
+    transition-delay: 0,2s,0,0;
 }
 .ball-3{
     background-color: blue;
