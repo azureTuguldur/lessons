@@ -1,0 +1,57 @@
+.back{
+    position: relative;
+    height: 800px;
+    width: 800px;
+    margin: 0 auto;
+    border: black solid 1px;
+}
+.cube{
+    height: 140px;
+    width: 140px;
+}
+.white{
+    position: absolute;
+    background-color: rgb(190, 250, 250);
+
+}
+.color{
+    position: absolute;
+    background-color: rgb(255, 167, 140);
+}
+.nomove, .move{
+    position: absolute;
+    justify-content: space-between;
+    width: 300px;
+    height: 300px;
+    top: 250px;
+    left: 250px;
+    mix-blend-mode: multiply;
+    transition-property: all;
+    transition-duration: 1s;
+}
+.w2, .w4, .c2 , .c4{
+    left: 160px;
+}
+.w3, .w4, .c3, .c4{
+    top: 160px;
+}
+.c1, .c2, .c3, .c4{
+    transition-property: all;
+    transition-duration: 1s;
+}
+.back:hover .move{
+    width: 800px;
+    height: 800px;
+    top: 0;
+    left: 0;
+}
+.back:hover .c2{
+    left: 660px;
+}
+.back:hover .c3{
+    top: 660px;
+}
+.back:hover .c4{
+    top: 660px;
+    left: 660px;
+}

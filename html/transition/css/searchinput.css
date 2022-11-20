@@ -1,0 +1,39 @@
+body{
+    background-color:#D9CFBD ;
+    height: 200px;
+}
+.back{
+    background-color: white;
+    border: solid #D9CFBD 3px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px 1px black;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    top: 100px;
+    margin: 0 auto;
+    position: relative;
+    transition-property: all;
+    transition-duration: 0.1s;
+
+}
+img{
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    top: 7px;
+    left: 7px;
+}
+.input{
+    position: absolute;
+    font-size: 36px;
+    color: grey;
+    display: none;
+    left: 50px;
+}
+.back:hover {
+    width: 250px;
+}
+.back:hover .input{
+    display: inline;
+}

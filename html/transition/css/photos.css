@@ -1,0 +1,32 @@
+img{
+    width: 250px;
+    height: 250px;
+}
+.photos{
+    width: 250px;
+    height: 250px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition-property: all;
+    transition-duration: 1s;
+}
+.back{
+    height: 750px;
+    width: 750px;
+    border: green solid 30px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.window{
+    width: 250px;
+    height: 250px;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.815);
+}
+.p1:hover{
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    right: 0;
+    bottom: 0;
+}

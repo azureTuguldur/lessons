@@ -1,0 +1,37 @@
+
+.button{
+    width: 300px;
+    margin: 0 auto;
+    background-color: grey;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    padding: 20px;
+    top: 300px;
+    position: relative;
+    transition-property: background-color,;
+    transition-duration: 1s;
+}
+.badge{
+    background-color: red;
+    color: white;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    top: 290px;
+    left: 1085px;
+    position: absolute;
+    transition-property: all;
+    transition-duration: 1s;
+}
+.full:hover .button{
+    background-color: red;
+    z-index: 2;
+}
+.full:hover .badge{
+    z-index: 0;
+    top: 320px;
+    left: 910px;
+}
