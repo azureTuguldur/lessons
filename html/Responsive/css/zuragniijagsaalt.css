@@ -1,0 +1,79 @@
+.balloons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+.balloons img{
+    object-fit: cover;
+    height: 400px;
+    width: 150px;
+    border-radius: 20px;
+}
+.houseside{
+    display: flex;
+    justify-content: center;
+}
+.mainhouse{
+    display: flex;
+    flex-direction: column;
+    width: 71%;
+}
+.house {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.house img{
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.side{
+    width: 25%;
+}
+@media screen and (max-width: 769px){
+    .balloons img{
+        object-fit: cover;
+        height: 200px;
+        width: 100%;
+        border-radius: 20px;
+        margin-bottom: 15px;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .houseside{
+        flex-direction: column;
+    }
+    .mainhouse{
+        width: 98%;
+        margin-left: 2%;
+    }
+    .house img{
+        height: 100px;
+        width: 200px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-right: 10px;
+    }
+    .housetext{
+        font-size: 8px;
+    }
+    .side{
+        width: 88%;
+        margin-left: 4%;
+    }
+    
+}
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .balloons img{
+        object-fit: cover;
+        height: 200px;
+        width: 300px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+}
