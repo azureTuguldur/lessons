@@ -11,7 +11,7 @@
         // 4.
         let number = 88; 
         let string = "Lam";
-        Boolean(10 > 9)
+        Boolean (24)
         let job = 1;
         job = null;
         undefined
@@ -27,9 +27,9 @@
         s
         let dd
         // 8.
-        let first_name = "Tuguldur";
-        let last_name = "Baynmunkh";     
-        let marital_status = "single";
+        let firstname_ = "Tuguldur";
+        let lastname_ = "Baynmunkh";     
+        let maritalstatus_ = "single";
         let country_ = "Mongolia";
         let age_ = "19";
         // 9.
