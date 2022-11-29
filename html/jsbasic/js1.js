@@ -31,9 +31,9 @@
         let lastname_ = "Baynmunkh";     
         let maritalstatus_ = "single";
         let country_ = "Mongolia";
-        let age_ = "19";
+        let age_ = 19;
         // 9.
-        let firstname = "Tuguldur"; let lastname = "Baynmunkh"; let maritalstatus = "single"; let country = "Mongolia" ; let age = "19";
+        let firstname = "Tuguldur"; let lastname = "Baynmunkh"; let maritalstatus = "single"; let country = "Mongolia" ; let age = 19;
         // 10.
         let myage   = 19 ;
         let yourage = "?" ;
