@@ -24,16 +24,19 @@ img{
     top: 7px;
     left: 7px;
 }
-.input{
+input{
     position: absolute;
     font-size: 36px;
     color: grey;
     display: none;
-    left: 50px;
+    left: 20%;
+    width: 70%;
+    border: none;
+    outline: none;
 }
 .back:hover {
     width: 250px;
 }
-.back:hover .input{
+.back:hover input{
     display: inline;
 }

@@ -1,8 +1,13 @@
+body{
+    background-color: black;
+}
 img{
     width: 250px;
     height: 250px;
+    position: absolute;
 }
 .photos{
+    position: relative;
     width: 250px;
     height: 250px;
     -webkit-filter: grayscale(100%);
@@ -11,6 +16,7 @@ img{
     transition-duration: 1s;
 }
 .back{
+    position: relative;
     height: 750px;
     width: 750px;
     border: green solid 30px;
@@ -19,14 +25,76 @@ img{
     flex-wrap: wrap;
 }
 .window{
+    transition: all 1s;
+    position: relative;
     width: 250px;
     height: 250px;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.815);
+    background-color: rgba(0, 0, 0, 0.329);
 }
 .p1:hover{
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
-    right: 0;
-    bottom: 0;
 }
+.p1:hover .window{
+    right: 250px;
+    bottom: 250px;
+}
+.p2:hover{
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.p2:hover .window{
+    bottom: 250px;
+}
+.p3:hover{
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.p3:hover .window{
+    left: 250px;
+    bottom: 250px;
+}
+.p4:hover{
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.p4:hover .window{
+    right: 250px;
+}
+.p5:hover{
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.p6:hover{
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.p6:hover .window{
+    left: 250px;
+}
+.p7:hover{
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.p7:hover .window{
+    right: 250px;
+    top: 250px;
+}
+.p8:hover{
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.p8:hover .window{
+    top: 250px;
+}
+.p9:hover{
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.p9:hover .window{
+    left: 250px;
+    top: 250px;
+}
+.window{
+    transition-property: all;
+    transition-duration: 1s;}
