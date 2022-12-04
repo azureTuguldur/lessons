@@ -12,6 +12,10 @@ h1{
     position: absolute;
     z-index: 1;
 }
+h4{
+    text-align: center;
+    color: white;
+}
 .ball{
     height: 100px;
     width: 100px;
@@ -21,37 +25,36 @@ h1{
     border-radius: 50%;
 }
 .ball-1{
-    background-color: red;
+    background-color: blue;
     z-index: 1000;
-    transition-property: top,left,background-color;
-    transition-duration: 2s,1s,3s;
+    transition-property: top,left;
+    transition-duration: 2s,2s;
 }
 .ball-2{
-    background-color: green;
+    background-color: red;
     z-index: 900;
     transition-property: top,left,border-radius,background-color;
     transition-duration: 1s,2s,3s,3s; 
     transition-delay: 0,2s,0,0;
 }
 .ball-3{
-    background-color: blue;
+    background-color: green;
     z-index: 800;
-    transition-property: top,left,background-color;
-    transition-duration: 0.5s,2.5s,3s;
+    transition-property: top,left;
+    transition-delay: 0s,1s;
+    transition-duration: 0.5s;
 }   
 .shadow:hover .ball-1{
     left: 0;
     top: 0;
-    background-color: green;
 }
 .shadow:hover .ball-2{
     left: 400px;
     top: 0;
-    background-color: blue;
+    background-color: yellow;
     border-radius: 0;
 }
 .shadow:hover .ball-3{
     left: 400px;
     top: 400px;
-    background-color: red;
 }
