@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arrayofNumbers = [43, 56, 23, 89, 88, 90, 99, 652, 15, 290, 11];
+        let max = 0;
+        let max2 = 0;
+        let min = 0;
+        let min2 = 0;
+        let sum = 0;
+        let i = 0;
+        
+        while(i < arrayofNumbers.length){
+            sum+=arrayofNumbers[i]
+            i++
+        }
+        console.log(`sum ni ${sum}`)
+
+
+        for( let i = 0; i < arrayofNumbers.length ; i++){
+            if (max < arrayofNumbers[i])
+            max = arrayofNumbers[i];
+        }
+        console.log(`max utga ni ${max}`)
+
+        // eniig zas
+        for( let i = 0; i < arrayofNumbers.length ; i++){
+            if (min < arrayofNumbers[i])
+            min = arrayofNumbers[i];
+        }
+        console.log(`min utga ni ${min}`)        
+
+
+        while(i < arrayofNumbers.length){
+            if( arrayofNumbers[i][0] >= 0){
+            }
+            i++
+        }
+        console.log(min2)
+    </script>   
+</body>
+</html>
