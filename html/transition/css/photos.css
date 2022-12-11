@@ -25,11 +25,12 @@ img{
     flex-wrap: wrap;
 }
 .window{
-    transition: all 1s;
     position: relative;
     width: 250px;
     height: 250px;
     background-color: rgba(0, 0, 0, 0.329);
+    transition-property: all;
+    transition-duration: 1s;
 }
 .p1:hover{
     -webkit-filter: grayscale(0%);
@@ -95,6 +96,3 @@ img{
     left: 250px;
     top: 250px;
 }
-.window{
-    transition-property: all;
-    transition-duration: 1s;}

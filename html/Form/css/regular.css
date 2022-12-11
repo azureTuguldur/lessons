@@ -1,0 +1,29 @@
+.back{
+    margin: 0 auto;
+    margin-top: 50px;
+    border: solid black 1px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+}
+div{
+    margin-top: 8px;
+}
+h2{
+    margin-top:-10px;
+    margin-right:580px;
+    margin-bottom: 0;
+    background:white;
+}
+.name{
+    margin-top: 10px;
+}
+.tod{
+    text-align: end;
+}
+.tod input{
+    height: 150px;
+    width: 250px;
+}
