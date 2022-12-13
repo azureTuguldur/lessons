@@ -1,32 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/hichel2.css">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <div id="block1" class="blo"></div>
-    <div id="block2" class="blo"></div>
-    <div id="block3" class="blo"></div>
-    <div id="block4" class="blo"></div>
-    <button id="btn">Change</button>
-    <script>
-        const colors = ["red" ,"green" ,"blue"];
-        let colorIndex = 0;
-        const div = document.getElementsByTagName("div")[0];
-        const change = () => {
+    <style>
+    body {
+        text-align: center;
+        }
+        .container {
+        display: flex;
+        justify-content: center;
+        }
+        .box {
+        width: 300px;
+        height: 300px;
+        margin: 20px;
+        background-color: rgb(83, 185, 105);
+        }
+        #myBtn {
+        padding: 1rem;
+        cursor: pointer;
+        border: 0;
+        background-color: rgba(82, 148, 82, 0.8);
+        color: #fff;
+        }
+        #myBtn2 {
+        padding: 1rem;
+        cursor: pointer;
+        border: 0;
+        background-color: rgba(144, 148, 82, 0.8);
+        color: #fff;
+        }
+        #myBtn3 {
+        padding: 1rem;
+        cursor: pointer;
+        border: 0;
+        background-color: rgba(148, 90, 82, 0.8);
+        color: #fff;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <button id="myBtn">Change color 1</button>
+        <button id="myBtn2">Change color 2</button>
+        <button id="myBtn3">Change color 3</button>
+
+        <script>
+            const myBtn = document.getElementById("myBtn");
+            const myBtn2 = document.getElementById("myBtn2");
+            const myBtn3 = document.getElementById("myBtn3");
+            const body = document.getElementsByTagName("body")[0];
+            const divs = document.getElementsByClassName("box");
+            const change = () => {
+            for (let i = 0; i < divs.length; i++) {
+                let color = getColor();
+                divs[i].style.backgroundColor = color;
+            }
+            };
+            const getColor = () => {
             let red = Math.floor(Math.random() * 256);
             let green = Math.floor(Math.random() * 256);
             let blue = Math.floor(Math.random() * 256);
-            document.getElementsByTagName(
-                "div"
-            )[0].style.backgroundColor = `rgb(${red},${green},${blue})`;
-        };
-        btn.addEventListener("click", change);
-
-    </script> -->
-</body>
+            return `rgb(${red}, ${green}, ${blue})`;
+            };
+            myBtn.addEventListener("click", change);
+            myBtn2.addEventListener("click", change);
+            myBtn3.addEventListener("click", change);
+        </script>
+    </body>
 </html>
