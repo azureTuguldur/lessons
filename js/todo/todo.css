@@ -1,0 +1,91 @@
+body{
+    background-color: black;
+}
+.back{
+    margin: 0 auto;
+    width: 500px;
+    height: 800px;
+    background-color: white;
+}
+.first{
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+h1{
+    font-weight: 900;
+    font-size: 36px;
+    color: #314595;
+    text-align: center;
+}
+.neg{
+    display: flex;
+}
+.udur{
+    display: flex;
+    justify-content: center;
+    color: #314595;
+}
+.inp{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-left: 50px;
+}
+.text{
+    width: 70%;
+    height: 40px;
+    border: none;
+    border-bottom: orange solid;
+    background-color: rgb(252, 246, 246);
+    outline: none;
+    font-size: 16px;
+    padding-left: 10px;
+}
+#add{
+    color: white;
+    background-color: orange;
+    border: none;
+    height: 44px;
+}
+.second{
+    border-bottom: solid #314595 ;
+    width: 70%;
+    margin-left: 74px;
+    margin-bottom: 5px;
+}
+.task{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin-left: 73px;
+    background-color: rgb(238,238,238);
+    border: solid rgba(255, 166, 0, 0.572) 1px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+.task input{
+    background-color: rgb(238,238,238);
+    border: none;
+    outline: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    width: 72%;
+}
+.actions{
+    display: flex;
+}
+.actions button{
+    border: none;
+}
+.fa-check {
+    color: darkgreen;
+}
+.fa-trash{
+    color: red;
+}
+.but:hover {
+    background-color: #334479;
+}

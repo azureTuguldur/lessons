@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="back">
+        <h1 class="first">Todo List App</h1>
+        <div class="udur">
+            <div class="neg"><p>Он сар өдөр:&nbsp</p><p id="time"></p></div>
+            <p id="uldsen"> </p>
+        </div>
+        <div class="inp">
+            <input class="text" id="to-do-input" type="text" placeholder="Таскын нэр оруулна уу.">
+            <button id="add">+ Нэмэх</button>
+        </div>
+        <div>
+        <h1 class="second">Жагсаалт</h1>
+        <div id="tasks"></div>
+        </div>
+    </div>
+
+<!-- dasdeahyu -->
+
+    <script>
+        let tim = document.getElementById("time")
+        tim.textContent = new Date().getFullYear() + "-" +new Date().getMonth() + "-" +new Date().getDay().toString().padStart(2,0)
+        
+        const addBtn = document.getElementById("add");
+        const taskList = document.getElementById("tasks");
+        const inputText = document.getElementById("to-do-input");
+
+        const cardItem = (text) =>{ 
+            const item = `
+                        <div class="task">
+                            <input type="text" class="text" readonly value="${text}" />
+                            <div class="actions">
+                                <button class="edit"><i class="fas fa-pen"></i></button>
+                                <button class="done"><i class="fas fa-check"></i></button>
+                                <button class="delete"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>`;
+            return item;
+        }
+
+        const taskAdd = () => {
+            let text = inputText.value;
+            if(text === ""){
+                alert("Ta utga oruulaagui baina");
+            }else{
+
+                taskList.innerHTML += cardItem(text);
+            }
+        }
+
+        addBtn.addEventListener("click",taskAdd);
+        document.addEventListener('keyup',(e)=>{
+            if(e.key === "Enter"){
+                taskAdd();
+            }
+})
+
+        console.log("event");
+        document.addEventListener("keypress", (event) =>{
+            console.log("Key Daragdlaa");
+            if(event.key === "Enter"){
+                console.log("Enter Daragdlaa");
+            }
+        })
+    </script>
+</body>
+</html>
