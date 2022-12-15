@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="todo2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
@@ -35,59 +35,50 @@
         const taskList = document.getElementById("tasks");
         const inputText = document.getElementById("to-do-input");
 
-        const cardItem = (text) =>{ 
+        const allTask = [];
+
+        const addTodo = () => {
+        // allTask array ruu ruu text iig nemne.
+        let text = inputText.value;
+        allTask.push(text);
+        renderTodoApp();
+        };
+
+        addBtn.addEventListener("click", addTodo);
+
+        const editTodo = (edit) =>{
+            console.log("edit");
+            text.removeAttribute("readonly")
+            
+        };
+
+        const doneTodo = (done) =>{
+            console.log("done");
+        };
+
+        const deleteTodo = (index) => {
+        console.log("II", index);
+        allTask.splice(index, 1);
+        renderTodoApp();
+        };
+
+
+        const renderTodoApp = () => {
+        //AllTask array aar delgetsend list haruulna
+        tasks.innerHTML = "";
+        for (let i = 0; i < allTask.length; i++) {
             const item = `   
                         <div class="task">
-                            <input type="text" class="text" readonly value="${text}" />
+                            <input type="text" class="text" id="text" readonly value="${allTask[i]}" />
                             <div class="actions">
-                                <button class="edit" onclick="ynzal(this)"><i class="fas fa-pen"></i></button>
-                                <button class="done" onclick="bolson(this)"><i class="fas fa-check"></i></button>
-                                <button class="delete" onclick="ustgah(this)"><i class="fas fa-trash"></i></button>
+                                <button class="edit"   onclick="editTodo(${i})"><i class="fas fa-pen"></i></button>
+                                <button class="done"   onclick="doneTodo(${i})"><i class="fas fa-check"></i></button>
+                                <button class="delete" onclick="deleteTodo(${i})"><i class="fas fa-trash"></i></button>
                             </div>
                         </div>`;
-            return item;
+            taskList.innerHTML += item;
         }
-
-        const ynzal = (e) =>{
-            alert("ynzal");
-
-        }
-
-        const bolson = (e) =>{
-            alert("bolson");
-        }
-
-                const ustgah = (e) => {
-            // alert("Ustgagdlaa.");
-            const parent = e.parentNode.parentNode.parentNode;
-            const child = e.parentNode.parentNode;
-            parent.removeChild(child)
-        }
-
-        const taskAdd = () => {
-            let text = inputText.value;
-            if(text === ""){
-                alert("Ta utga oruulaagui baina");
-            }else{
-
-                taskList.innerHTML += cardItem(text);
-            }
-        }
-
-        addBtn.addEventListener("click",taskAdd);
-        document.addEventListener('keyup',(e)=>{
-            if(e.key === "Enter"){
-                taskAdd();
-            }
-})
-
-        console.log("event");
-        document.addEventListener("keypress", (event) =>{
-            console.log("Key Daragdlaa");
-            if(event.key === "Enter"){
-                console.log("Enter Daragdlaa");
-            }
-        })
+        };
     </script>
 </body>
 </html>
