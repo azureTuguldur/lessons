@@ -45,7 +45,8 @@ h1{
     color: white;
     background-color: orange;
     border: none;
-    height: 44px;
+    height: 45px;
+    outline: none;
 }
 .second{
     border-bottom: solid #314595 ;
@@ -79,6 +80,7 @@ h1{
 }
 .actions button{
     border: none;
+    outline: none;
 }
 .fa-check {
     color: darkgreen;
@@ -86,6 +88,6 @@ h1{
 .fa-trash{
     color: red;
 }
-.but:hover {
+#add:hover {
     background-color: #334479;
 }

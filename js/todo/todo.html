@@ -36,16 +36,32 @@
         const inputText = document.getElementById("to-do-input");
 
         const cardItem = (text) =>{ 
-            const item = `
+            const item = `   
                         <div class="task">
                             <input type="text" class="text" readonly value="${text}" />
                             <div class="actions">
-                                <button class="edit"><i class="fas fa-pen"></i></button>
-                                <button class="done"><i class="fas fa-check"></i></button>
-                                <button class="delete"><i class="fas fa-trash"></i></button>
+                                <button class="edit" onclick="ynzal(this)"><i class="fas fa-pen"></i></button>
+                                <button class="done" onclick="bolson(this)"><i class="fas fa-check"></i></button>
+                                <button class="delete" onclick="ustgah(this)"><i class="fas fa-trash"></i></button>
                             </div>
                         </div>`;
             return item;
+        }
+
+        const ynzal = (e) =>{
+            
+
+        }
+
+        const bolson = (e) =>{
+            // console.log(this);
+        }
+
+                const ustgah = (e) => {
+            // alert("Ustgagdlaa.");
+            const parent = e.parentNode.parentNode.parentNode;
+            const child = e.parentNode.parentNode;
+            parent.removeChild(child)
         }
 
         const taskAdd = () => {
