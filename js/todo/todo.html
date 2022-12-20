@@ -17,6 +17,7 @@
         </div>
         <div class="inp">
             <input class="text" id="to-do-input" type="text" placeholder="Таскын нэр оруулна уу.">
+            <option value=""></option>
             <button id="add">+ Нэмэх</button>
         </div>
         <div>
@@ -38,26 +39,35 @@
         const cardItem = (text) =>{ 
             const item = `   
                         <div class="task">
-                            <input type="text" class="text" readonly value="${text}" />
+                            <input type="text" id="textTodo" class="text" readonly value="${text}" />
                             <div class="actions">
-                                <button class="edit" onclick="ynzal(this)"><i class="fas fa-pen"></i></button>
-                                <button class="done" onclick="bolson(this)"><i class="fas fa-check"></i></button>
-                                <button class="delete" onclick="ustgah(this)"><i class="fas fa-trash"></i></button>
+                                <button class="edit" onclick="editTodo(this)"><i class="fas fa-pen"></i></button>
+                                <button class="done" onclick="doneTodo(this)"><i class="fas fa-check"></i></button>
+                                <button class="delete" onclick="deleteTodo(this)"><i class="fas fa-trash"></i></button>
                             </div>
                         </div>`;
             return item;
         }
 
-        const ynzal = (e) =>{
-            alert("ynzal");
 
+        const editTodo = (e) =>{
+            // console.log(this);
+            const textTodo = document.getElementById("textTodo")
+            const a = e.parentNode.parentNode;
+            console.log (a)
+            textTodo.removeAttribute("readonly")
         }
 
-        const bolson = (e) =>{
-            alert("bolson");
+        const doneTodo = (e) =>{
+            // console.log(this);
+            const textTodo = document.getElementById("textTodo")
+            const a = e.parentNode.parentNode;
+            console.log (a)
+            document.getElementById("textTodo").style.textDecorationLine = 'overline';
+            console.log(textTodo)
         }
 
-                const ustgah = (e) => {
+        const deleteTodo = (e) => {
             // alert("Ustgagdlaa.");
             const parent = e.parentNode.parentNode.parentNode;
             const child = e.parentNode.parentNode;
@@ -80,14 +90,6 @@
                 taskAdd();
             }
 })
-
-        console.log("event");
-        document.addEventListener("keypress", (event) =>{
-            console.log("Key Daragdlaa");
-            if(event.key === "Enter"){
-                console.log("Enter Daragdlaa");
-            }
-        })
     </script>
 </body>
 </html>
