@@ -1,0 +1,65 @@
+*{
+    font-size: 16px;
+}
+.back{
+    margin: 0 auto;
+    width: 300px;
+    height: 450px;
+    background-color: black;
+    padding-top: 10px;
+    padding-left: 5px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 100px;
+}
+.screen{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 26px;
+    width: 240px;
+    height: 75px;
+    background-color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 40px;
+}
+.buttons{
+    display: flex;
+    margin: 0 auto;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.numpad{
+    display: flex;
+    flex-wrap: wrap;
+}
+.jobs{
+    margin-right: 7px;
+}
+.button{
+    width: 60px;
+    height: 60px;
+    background-color: blueviolet;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 30px;
+}
+.equal{
+    height: 60px;
+    width: 80%;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+}
+.dot{
+    font-size: 40px;
+}
+.button:focus{
+    background-color: ran;
+}
