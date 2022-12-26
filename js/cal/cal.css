@@ -71,7 +71,7 @@ button{
 .dot{
     font-size: 20px;
 }
-.button:active {
+button:active {
     background-color:rgb(143, 119, 221);
     box-shadow: none;
 }
