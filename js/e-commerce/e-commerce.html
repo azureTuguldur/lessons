@@ -10,6 +10,32 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="cart" style="position: fixed;height: 100vw;width: 30%; background-color: blue;right: 0;z-index: 1000;">
+        <div class="row" style="background-color: aqua; height: 100px;width: 100%;margin: 0 auto;margin-top: 30px;border-radius: 20px;position: relative;bottom: 0;">
+            <h1 class="col">Cart</h1>
+            <div class="col-2">
+                <button type="button" class="btn btn-light" style="height: 100px; width: 100px;">X</button>
+            </div>
+        </div>
+        <div class="row" style="background-color: aqua; height: 100px;width: 90%;margin: 0 auto;margin-top: 30px;border-radius: 20px;">
+            <img src="./img/iphone9 1.png" alt="" style="height: 90px;width: 90px;border-radius: 50%;margin-top: 5px;" class="col-4">
+            <div class="col" style="margin-top:20px;">
+                <div class="name">lkkllk</div>
+                <div class="price">12121$</div>
+            </div>
+            <div class="col" style="margin-top:15px;">
+                <div class="plus">+</div>
+                <div class="count">2</div>
+                <div class="minus">-</div>
+            </div>
+            <div class="maxprice col" style="margin-top: 40px;">100%</div>
+        </div>
+        <div class="row" style="background-color: aqua; height: 100px;width: 100%;margin: 0 auto;margin-top: 30px;border-radius: 20px;position: relative;top: 0;">
+            <h1 class="text-center" style="margin-top: 20px;">
+                Total Price : 1000$
+            </h1>
+        </div>
+    </div>
     <nav class="navbar mx-4" style="height: 40px; margin-top: -10px;">
         <button class="btn"><img src="./img/W.png" style="height: 30px;" alt=""></button>
         <div class="input-group w-75 mt-3 mb-3">
@@ -42,14 +68,14 @@
         console.log("ECOMMERCE")
 
     const productList = document.querySelector('.productList')
-  
+        
     
     displayProduct = (allProducts) =>{
         productList.innerHTML += allProducts.map(
             (product)=>{
                 return `
                     <div class="card mt-3" style="width: 18rem;">
-                    <img src="${product.thumbnail}" class="card-img-top" alt="" style="height:200px;">
+                    <img src="${product.thumbnail}" class="card-img-top" alt="" style="height:180px;">
                     <div class="card-body">
                     <h4 class="card-title text-center mb-4" >${product.title}</h4>
                     <div class="sale text-success text-end fs-6">${product.discountPercentage}%</div>
