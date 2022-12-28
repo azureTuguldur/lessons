@@ -19,37 +19,20 @@
         </div>
         <div class="sidebtn">
             <button type="button" class="btn btn-light">Sign in</button>
-            <button type="button" class="btn btn-light cartbtn">My cart</button>
+            <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">My Cart</button>
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">My Cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body cartList">
+                </div>
+                <div class="offcanvas-footer" style="padding: 16px;">
+                    <h5 class="offcanvas-title text-end">Total :</h5>
+                </div>
+            </div>
         </div>
     </nav>
-    <div id="cartList" style="position: fixed;height: 100vw;width: 20%; background-color: white;right: 0;z-index: 1000;top: 0;left: 3000px;">
-        <div class="row" style="background-color: rgb(49,108,244); height: 100px;width: 100%;margin: 0 auto;position: relative;bottom: 0;">
-            <h1 class="col-10" style="text-align: center;margin-top: 15px; font-size: 60px;font-weight: 300;">Cart</h1>
-            <div class="col-2">
-                <button type="button" class="btn" style="height: 100px; width: 100px;">X</button>
-            </div>
-        </div>
-        <div class="row" style="height: 100px;width: 90%;margin: 0 auto;margin-top: 30px;border-radius: 20px;">
-            <img src="./img/iphone9 1.png" alt="" style="height: 100px;width: 100px;border-radius: 10px;" class="col-4">
-            <div class="col" style="margin-top:10px;">
-                <div style="font-size: 1.5rem;" class="name">lkkllk</div>
-                <div style="font-size: 1.5rem;" class="price">12121$</div>
-            </div>
-            <div class="col" style="">
-                <button  class="btn plus">+</button>
-                <div  class="count" style="margin-left: 12px;">2</div>
-                <button class="btn minus">-</button>
-            </div>
-            <h4 class="maxprice col" style="margin-top: 40px;">1024$</h4>
-        </div>
-        <div class="" style="position: relative;">
-            <div class="row" style="background-color: rgb(49,108,244); height: 50px;width: fit-content;margin: 0 auto;margin-top: 30px;border-radius: 20px;top: 750px;position: absolute;">
-                <h1 class="text-center" style="font-weight: 300;">
-                    Total Price : 1000$
-                </h1>
-            </div>
-        </div>
-    </div>
     <div class="container mt-5 d-flex">
         <div class="sidebar w-25 me-5">
             <ul class="list-group">
@@ -60,7 +43,18 @@
             </ul>
         </div>
         <div class="productList d-flex w-75 justify-content-between flex-wrap">
-            
+            <!-- Loader -->
+            <div>
+                <div
+                    class="spinner-border text-warning"
+                    style="width: 5rem; height: 5rem"
+                    role="status"
+                    >
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <h4>Уншиж байна</h4>
+            </div>
+            <!-- Loader -->
         </div>
     </div>
 
@@ -69,17 +63,17 @@
     <script>
         console.log("ECOMMERCE")
 
-    const productList = document.querySelector('.productList')
-    let cartList = document.getElementById("cartList")
-    let allProducts = []
-    let cartProducts = []
-    
+    const productList = document.querySelector(".productList");
+    const cartList = document.querySelector(".cartList");
+    const productsEvent = document.querySelector(".productsEvent");
+    const cartCount = document.querySelector(".cartCount");
+    let allProducts = [];
+    let cartProducts = [];
 
-
-    displayProduct = (allProducts) =>{
-        productList.innerHTML += allProducts.map(
-            (product)=>{
-                return `
+    displayProduct = () =>{
+        productList.innerHTML = "";
+        allProducts.forEach((product, idx)=>{
+            const productItem = `
                     <div class="card mt-3" style="width: 18rem;">
                         <img src="${product.thumbnail}" class="card-img-top" alt="" style="height:180px;">
                         <div class="card-body">
@@ -91,13 +85,14 @@
                         </div>
                         <div class="d-flex justify-content-between" style="height: 35px;">
                         <img src="./img/4.5.png" alt="" class="" style="height: 30px;">
-                        <a href="#" onclick=(addcart()) class="btn btn-primary text-black d-flex">Add cart</a>
+                        <button onclick="addCart(${idx})" class="btn btn-primary text-black d-flex addCart">Add cart</button>
                         </div>
                         </div>
                     </div>
-                `
+                `;
+        productList.innerHTML += productItem;
             }
-        ).join(``)
+        )
     }
 
     const getProducts = async () =>{
@@ -109,25 +104,69 @@
     };
 
     getProducts();
+    
+    
+    const addCart = (idx) => {
+    cartProducts.push(allProducts[idx]);
+    displayCart();
+    };
 
-
+    const removeCart = (rmvcart) =>{
+        
+    }
+        
+    const displayCart = () => {
+    cartList.innerHTML = "";
+    for (product of cartProducts) {
+        const cartItem = `
+            <div class="d-flex align-items-center mb-5 border border-primary-emphasis border-2">
+                <div class="flex-shrink-0">
+                <img
+                    src="${product.thumbnail}"
+                    class="img-fluid"
+                    style="width: 150px"
+                    alt="Generic placeholder image"
+                />
+                </div>
+                <div class="flex-grow-1 ms-3">
+                <button onclick="removeCart(this)" class="btn float-end text-black">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h5 class="text-primary">${product.title}</h5>
+                <h6 class="text-success">${product.discountPercentage}%</h6>
+                <div class="d-flex align-items-center">
+                    <p class="fw-bold mb-0 me-5 pe-3">${product.price}$</p>
+                    <div class="">
+                    <input
+                        class="form-control"
+                        min="0"
+                        id="quantity"
+                        value="1"
+                        type="number"
+                    />
+                    </div>
+                </div>
+                </div>
+            </div>`;
+        cartList.innerHTML += cartItem;
+    }
+    };
     </script>
 
 <!--  
-      "id": 1,
-      "title": "iPhone 9",
-      "description": "An apple mobile which is nothing like apple",
-      "price": 549,
-      "discountPercentage": 12.96,
-      "rating": 4.69,
-      "stock": 94,
-      "brand": "Apple",
-      "category": "smartphones",
-      "thumbnail": "...",
-      "images": ["...", "...", "..."]
- -->
+    "id": 1,
+    "title": "iPhone 9",
+    "description": "An apple mobile which is nothing like apple",
+    "price": 549,
+    "discountPercentage": 12.96,
+    "rating": 4.69,
+    "stock": 94,
+    "brand": "Apple",
+    "category": "smartphones",
+    "thumbnail": "...",
+    "images": ["...", "...", "..."]
+-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./e-commerce.js">
 </body>
 </html>
