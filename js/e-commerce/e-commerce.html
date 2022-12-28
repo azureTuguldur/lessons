@@ -33,16 +33,26 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-5 d-flex">
-        <div class="sidebar w-25 me-5">
-            <ul class="list-group">
-                <li class="list-group-item">Department</li>
-                <li class="list-group-item">All categories</li>
-                <li class="list-group-item">Collapsed filters</li>
-                <li class="list-group-item">Expanded filters</li>
-            </ul>
+    <div class="container mt-5">
+        <button class="btn btn-light col-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Categories</button>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h3 class="offcanvas-title text-primary ps-3" id="offcanvasWithBothOptionsLabel">
+                    Categories
+                </h3>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body col ps-3" >
+                <button class="btn btn-light mt-2" onclick="filter('Smartphones')"  style="display: block;">Smartphones</button>
+                <button class="btn btn-light mt-2" onclick="filter('Laptops')"      style="display: block;">Laptops</button>
+                <button class="btn btn-light mt-2" onclick="filter('Fragnances')"   style="display: block;">Fragnances</button>
+                <button class="btn btn-light mt-2" onclick="filter('Skincare')"     style="display: block;">Skincare</button>
+                <button class="btn btn-light mt-2" onclick="filter('Groceries')"    style="display: block;">Groceries</button>
+            </div>
         </div>
-        <div class="productList d-flex w-75 justify-content-between flex-wrap">
+    </div>
+    <div class="container mt-3 d-flex">
+        <div class="productList d-flex justify-content-between flex-wrap">
             <!-- Loader -->
             <div>
                 <div
@@ -52,7 +62,7 @@
                     >
                     <span class="visually-hidden">Loading...</span>
                 </div>
-                <h4>Уншиж байна</h4>
+                <h4>Loading</h4>
             </div>
             <!-- Loader -->
         </div>
@@ -74,18 +84,18 @@
         productList.innerHTML = "";
         allProducts.forEach((product, idx)=>{
             const productItem = `
-                    <div class="card mt-3" style="width: 18rem;">
-                        <img src="${product.thumbnail}" class="card-img-top" alt="" style="height:180px;">
+                    <div class="card mt-3" style="width: 19rem;">
+                        <img src="${product.thumbnail}" class="card-img-top" alt="" style="height:160px;">
                         <div class="card-body">
-                        <h4 class="card-title text-center mb-4" >${product.title}</h4>
-                        <div class="sale text-success text-end fs-6">${product.discountPercentage}%</div>
+                        <h5 class="card-title text-center mb-4" >${product.title}</h5>
+                        <div class="sale text-success fs-6 "><div class="border-success border rounded " style="width:min-content;padding-left:5px;padding-right:5px;margin-left:190px;">${product.discountPercentage}%</div></div>
                         <div class="card-text">
                         <h5>${product.price}$</h5>
                         <p class="text-truncate">${product.description}</p>
                         </div>
                         <div class="d-flex justify-content-between" style="height: 35px;">
                         <img src="./img/4.5.png" alt="" class="" style="height: 30px;">
-                        <button onclick="addCart(${idx})" class="btn btn-primary text-black d-flex addCart">Add cart</button>
+                        <button onclick="addCart(${idx})" class="btn btn-primary text-light d-flex addCart">Add cart</button>
                         </div>
                         </div>
                     </div>
@@ -111,10 +121,8 @@
     displayCart();
     };
 
-    const removeCart = (rmvcart) =>{
-        
-    }
-        
+
+
     const displayCart = () => {
     cartList.innerHTML = "";
     for (product of cartProducts) {
@@ -151,6 +159,9 @@
         cartList.innerHTML += cartItem;
     }
     };
+
+    
+
     </script>
 
 <!--  
